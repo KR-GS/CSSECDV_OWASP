@@ -5,7 +5,8 @@ tm.description = "Activity 1 CSSECDV Group 5 - Cajumban, Larraquel, Pe, Santos, 
 
 
 #Boundaries
-dependcies = Boundary("dependencies")
+dependencies = Boundary("dependencies")
+perimeter_firewall = Boundary("Perimeter Firewall")
 
 
 #Blocks
@@ -14,13 +15,15 @@ election_administrator = Actor("Election Administrator")
 voter = Actor("Voter")
 
 client_web_browser = Actor("Client Web Browser")
-client_web_browser.inBoundary = dependcies
+client_web_browser.inBoundary = dependencies
 
 server = Server("Server")
 
 student_voter_information = Datastore("Student Voter Information")
 
 etherium = Server("Etherium")
+
+# Trust Boundaries
 
 #Election administrator dataflows
 reg_candidates = Dataflow(election_administrator, client_web_browser, "Register candidates")
