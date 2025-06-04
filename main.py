@@ -24,6 +24,8 @@ student_voter_information = Datastore("Student Voter Information")
 etherium = Server("Etherium")
 
 # Trust Boundaries
+server.inBoundary = perimeter_firewall
+student_voter_information.inBoundary = perimeter_firewall
 
 #Election administrator dataflows
 reg_candidates = Dataflow(election_administrator, client_web_browser, "Register candidates")
